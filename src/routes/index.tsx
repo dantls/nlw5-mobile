@@ -1,21 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
-// import AppRoutes from './routes';
+import StackRoutes from './stack.routes'
+import {NavigationContainer} from '@react-navigation/native'
 
 import useToggleTheme from '../../src/hooks/useToggleTheme';
-import { UserIdentification } from '../screens/UserIndetification';
-import { Welcome } from '../screens/Welcome';
 
 const Routes: React.FC = () => {
 
   const { theme } = useToggleTheme();
 
   return (
-    <ThemeProvider theme={theme}>
-      <UserIdentification />
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+      <StackRoutes />
       <StatusBar style={theme.title === 'dark'? 'light' : 'dark'} />
-    </ThemeProvider>
+      </ThemeProvider>
+     </NavigationContainer> 
   );
 }
 export default Routes;

@@ -11,9 +11,17 @@ import {
   Container,
   Wrapper,
 } from './styles';
+import { useNavigation } from '@react-navigation/core';
 
 
 export function Welcome(){
+
+  const navigation = useNavigation();
+
+  function handleStart(){
+    navigation.navigate('UserIdentification');
+  }
+
   return(
     <Wrapper>
       <Container>
@@ -30,7 +38,9 @@ export function Welcome(){
           você sempre que precisar
         </SubTitle>
          
-         <Button>
+         <Button
+          onPress={handleStart}
+         >
            <Feather 
             name="chevron-right"
             size={24}
