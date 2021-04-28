@@ -24,6 +24,14 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: colors.heading,
 
+  },
+  environmentList:{
+    height: 40,
+    justifyContent:'center',
+    paddingBottom: 5,
+    paddingRight: 30,
+    marginLeft: 32,
+    marginVertical: 32,
   }
 })
 
