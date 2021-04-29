@@ -32,6 +32,14 @@ const styles = StyleSheet.create({
     paddingRight: 30,
     marginLeft: 32,
     marginVertical: 32,
+  },
+  plants:{
+    flex: 1,
+    paddingHorizontal: 32,
+    justifyContent: 'center'
+  },
+  plantsList:{
+    
   }
 })
 
