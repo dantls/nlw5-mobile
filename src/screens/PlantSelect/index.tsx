@@ -14,36 +14,30 @@ import { Load } from '../../components/Load';
 import { Header } from '../../components/Header';
 import { PlantCardPrimary } from '../../components/PlantCardPrimary';
 import api from '../../services/api';
+import { PlantProps } from '../../libs/storage';
+
 
 import {styles} from './styles';
 import colors from '../../styles/colors';
+import { useNavigation } from '@react-navigation/native';
 
 interface EnvironmentsProps {
   key: string;
   title: string
 }
-interface PlantsProps {
-  id: number;
-  name: string;
-  about: string;
-  water_tips: string;
-  photo: string;
-  environments: Array<string>,
-  frequency: {
-    times: number,
-    repeat_every: string;
-  }
-}
+
 
 export function PlantSelect(){
+  const navigation = useNavigation();
+
   //Environments data sent by api
   const [environments, setEnviroments] = useState<EnvironmentsProps[]>([]) 
 
   //Plant data sent by api
-  const [plants, setPlants] = useState<PlantsProps[]>([]) 
+  const [plants, setPlants] = useState<PlantProps[]>([]) 
 
   //Data Filter 
-  const [filteredPlants, setFilteredPlants] = useState<PlantsProps[]>([]) 
+  const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([]) 
   
   //Button Selected 
   const [environmentsSelected, setEnviromentsSelected] = useState('all') 
@@ -67,7 +61,7 @@ export function PlantSelect(){
   }
   async function fetchPlants(){
     const {data} = await api
-    .get<PlantsProps[]>(`plants?_sort=name&_order=asc&_page=${page}&_limit=8`);
+    .get<PlantProps[]>(`plants?_sort=name&_order=asc&_page=${page}&_limit=8`);
     if(!data){
       return setLoading(true);
     }
@@ -114,6 +108,10 @@ export function PlantSelect(){
 
   }
 
+  function handlePlantSelect(plant: PlantProps){
+    navigation.navigate('PlantSave', {plant})
+  }
+
   if(loading)
     return <Load />
   return(
@@ -152,8 +150,8 @@ export function PlantSelect(){
           keyExtractor={(item) => String(item.id)}
           renderItem={({item})=>(
             <PlantCardPrimary 
-              name={item.name}
-              photo={item.photo}
+              data={item}
+              onPress={()=>handlePlantSelect(item)}
             />
           )}
           showsVerticalScrollIndicator={false}

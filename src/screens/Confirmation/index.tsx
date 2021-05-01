@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
 import { 
@@ -9,10 +10,12 @@ import {
 import {Button} from '../../components/Button';
 import { styles } from './styles';
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-
 function Confirmation(){
+  const navigation = useNavigation();
+
+  function handleSubmit(){
+    navigation.navigate('PlantSelect');
+  }
   return(
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -28,7 +31,10 @@ function Confirmation(){
         </Text>
 
         <View style={styles.footer}>
-          <Button title="Confirmar"/>
+          <Button 
+            title="Confirmar"
+            onPress={()=>{handleSubmit()}}
+          />
         </View>
 
 

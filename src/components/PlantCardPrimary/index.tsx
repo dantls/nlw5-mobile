@@ -6,13 +6,22 @@ import {SvgFromUri} from 'react-native-svg';
 
 
 interface PlantCardPrimaryProps extends RectButtonProps{
-  name: string;
-  photo: string;
+  data:{
+    id: number;
+    name: string;
+    about: string;
+    water_tips: string;
+    photo: string;
+    environments: Array<string>,
+    frequency: {
+      times: number,
+      repeat_every: string;
+    }
+  }
 }
 
 export function PlantCardPrimary({
-  name,
-  photo,
+  data,
   ...rest
 }:PlantCardPrimaryProps){
   return(
@@ -21,13 +30,13 @@ export function PlantCardPrimary({
       {...rest}
     >
       <SvgFromUri 
-        uri={photo} 
+        uri={data.photo} 
         width={70}
         height={70}
       />
 
       <Text style={styles.text}>
-        {name}
+        {data.name}
       </Text>
     </RectButton>
   )

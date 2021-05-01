@@ -12,13 +12,16 @@ import {
   Wrapper,
 } from './styles';
 import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export function Welcome(){
 
   const navigation = useNavigation();
 
-  function handleStart(){
+  async function handleStart(){
+    
+
     navigation.navigate('UserIdentification');
   }
 
