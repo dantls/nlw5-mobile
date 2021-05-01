@@ -11,6 +11,7 @@ import { PlantSelect } from '../screens/PlantSelect';
 const StackRoutes = createStackNavigator();
 
 const AppRoutes : React.FC = () => (
+  
   <StackRoutes.Navigator
     headerMode="none"
     screenOptions={{
@@ -20,10 +21,7 @@ const AppRoutes : React.FC = () => (
     }}
   >
 
-    <StackRoutes.Screen 
-      name="PlantSelect"
-      component={PlantSelect}
-    />
+    
     <StackRoutes.Screen 
       name="Welcome"
       component={Welcome}
@@ -35,6 +33,10 @@ const AppRoutes : React.FC = () => (
     <StackRoutes.Screen 
       name="Confirmation"
       component={Confirmation}
+    />
+    <StackRoutes.Screen 
+      name="PlantSelect"
+      component={PlantSelect}
     />
     
 
