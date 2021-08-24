@@ -49,7 +49,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React-native-reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)
 - [AsyncStorage](https://docs.expo.dev/versions/v42.0.0/sdk/async-storage/)
 - [Notifications](https://docs.expo.dev/versions/v42.0.0/sdk/notifications/)
-- [Styled-Components](https://styled-components.com/)
+
 
 
 
