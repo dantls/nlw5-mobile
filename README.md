@@ -6,8 +6,8 @@
    * [Sobre](#sobre)
    * [Como rodar o projeto](#run)
       * [Startar o Mobile](#api)
-   * [Preview do Projeto](#preview)
    * [Tecnologias](#tecnologias)
+   * [Preview do Projeto](#preview)
    * [Licença](#license)
 <!--te-->
 
@@ -32,6 +32,8 @@ $ yarn
 
 # Navegue até a pasta src\services
 # Insira seu IP na baseURL do arquivo src\services\api.ts
+
+# Rode o comando abaixo trocando para seu IP
 $ json-server -H 192.168.0.3 -p 3333 -w server.json
 ```
 
@@ -53,15 +55,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <h1 name="tecnologias">➕ Plus</h1>
 
-## Libraries
-
 - [React Navigation](https://reactnavigation.org/)
 - [Lottie-react-native](https://docs.expo.dev/versions/latest/sdk/lottie/)
 - [React-native-reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)
 - [AsyncStorage](https://docs.expo.dev/versions/v42.0.0/sdk/async-storage/)
 - [Notifications](https://docs.expo.dev/versions/v42.0.0/sdk/notifications/)
 
+<h1 name="preview">Preview</h1>
 
+<p align="center">
+  <img src="https://github.com/dantls/nlw5-mobile/blob/master/assets/image.png" height=600 width=300 alt="previous" />
+</p>
 
 
 <h4 name="license" align="center">
