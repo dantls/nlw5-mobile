@@ -4,9 +4,9 @@
 # :pushpin: Tabela de conteúdos
 <!--ts-->
    * [Sobre](#sobre)
-   * [Preview do Projeto](#preview)
    * [Como rodar o projeto](#run)
       * [Startar o Mobile](#api)
+   * [Preview do Projeto](#preview)
    * [Tecnologias](#tecnologias)
    * [Licença](#license)
 <!--te-->
@@ -23,11 +23,22 @@ Agradecimento especial ao professor Rodrigo Gonçalves, por compartilhar seu con
 $ git clone https://github.com/dantls/nlw5-mobile
 ```
 
-<h3 name='api'>📦 Startar o APP mobile</h3><br>
+
+<h3 name='app'>📦 Startar o Servidor</h3><br>
 
 ```bash
 # Instale as dependências
 $ yarn
+
+# Navegue até a pasta src\services
+# Insira seu IP na baseURL do arquivo src\services\api.ts
+$ json-server -H 192.168.0.3 -p 3333 -w server.json
+```
+
+
+<h3 name='api'>📦 Startar o APP mobile</h3><br>
+
+```bash
 $ yarn start | expo start
 ```
 
