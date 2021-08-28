@@ -19,7 +19,7 @@ Agradecimento especial ao professor Rodrigo Gonçalves, por compartilhar seu con
 <h1 name="run">:construction_worker: Como rodar o projeto</h1> <br>
 
 ```bash
-# Clone Repository
+# Clone o Repository
 $ git clone https://github.com/dantls/nlw5-mobile
 ```
 
